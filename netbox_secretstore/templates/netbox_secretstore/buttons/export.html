@@ -1,11 +1,12 @@
+{% load i18n %}
 <div class="btn-group">
   <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     <span class="mdi mdi-database-export" aria-hidden="true"></span>
-    Export <span class="caret"></span>
+    {% trans 'Export' %} <span class="caret"></span>
   </button>
   <ul class="dropdown-menu dropdown-menu-right">
-    <li><a href="?{% if url_params %}{{ url_params.urlencode }}&{% endif %}export=table">Current view</a></li>
-    <li><a href="?{% if url_params %}{{ url_params.urlencode }}&{% endif %}export">Default format</a></li>
+    <li><a href="?{% if url_params %}{{ url_params.urlencode }}&{% endif %}export=table">{% trans 'Current view' %}</a></li>
+    <li><a href="?{% if url_params %}{{ url_params.urlencode }}&{% endif %}export">{% trans 'Default format' %}</a></li>
     {% if export_templates %}
       <li class="divider"></li>
       {% for et in export_templates %}

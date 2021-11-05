@@ -1,5 +1,5 @@
 {% extends 'base/layout.html' %}
-{% load buttons %}
+{% load buttons i18n %}
 {% load custom_links %}
 {% load helpers %}
 {% load perms %}
@@ -54,7 +54,7 @@
       {% url journal_viewname pk=object.pk as journal_url %}
       {% if journal_url %}
         <li role="presentation" class="nav-item">
-          <a href="{{ journal_url }}" class="nav-link{% if active_tab == 'journal'%} active{% endif %}">Journal</a>
+          <a href="{{ journal_url }}" class="nav-link{% if active_tab == 'journal'%} active{% endif %}">{% trans 'Journal' %}</a>
         </li>
       {% endif %}
       {% endwith %}
@@ -73,8 +73,8 @@
 {% block content %}
   <p>
     <small class="text-muted">
-      Created {{ object.created|annotated_date }} &middot;
-      Updated <span title="{{ object.last_updated|annotated_date }}">{{ object.last_updated|timesince }}</span> ago
+      {% trans 'Created' %} {{ object.created|annotated_date }} &middot;
+      {% trans 'Updated' %} <span title="{{ object.last_updated|annotated_date }}">{{ object.last_updated|timesince }}</span> ago
     </small>
     <span class="badge bg-primary">{{ object|meta:"app_label" }}.{{ object|meta:"model_name" }}:{{ object.pk }}</span>
   </p>

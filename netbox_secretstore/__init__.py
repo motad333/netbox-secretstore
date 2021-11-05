@@ -1,10 +1,10 @@
 from extras.plugins import PluginConfig
-
+from django.utils.translation import gettext_lazy as _
 
 class NetBoxSecretStore(PluginConfig):
     name = 'netbox_secretstore'
-    verbose_name = 'Netbox Secret Store'
-    description = 'A Secret Storage for NetBox'
+    verbose_name = _('Netbox Secret Store')
+    description = _('A Secret Storage for NetBox')
     version = '1.0.8'
     author = 'NetBox Maintainers'
     author_email = ''

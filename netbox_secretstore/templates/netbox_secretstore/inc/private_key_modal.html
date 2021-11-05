@@ -1,10 +1,11 @@
+{% load i18n %}
 <div class="modal fade" id="privkey_modal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-md" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h5 class="modal-title" id="privkey_modal_title">
                     <span class="mdi mdi-lock" aria-hidden="true"></span>
-                    Enter Private RSA Key
+                    {% trans 'Enter Private RSA Key' %}
                 </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
@@ -19,7 +20,7 @@
             </div>
             <div class="modal-footer float-end">
                 <button id="request_session_key" class="btn btn-primary" data-bs-dismiss="modal">
-                    Request Session Key
+                    {% trans 'Request Session Key' %}
                 </button>
             </div>
         </div>

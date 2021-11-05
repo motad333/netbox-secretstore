@@ -1,9 +1,9 @@
 {% extends 'users/base.html' %}
-{% load form_helpers %}
+{% load form_helpers i18n %}
 {% load plugins %}
 {% load static %}
 
-{% block title %}User Key{% endblock %}
+{% block title %}{% trans 'User Key' %}{% endblock %}
 
 {% block content %}
     {% if object.is_active %}
@@ -32,18 +32,18 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title" id="new_keypair_modal_title">
-                        New RSA Key Pair
+                        {% trans 'New RSA Key Pair' %}
                     </h4>
                     <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="field-group">
-                        <h5>New Public Key</h5>
+                        <h5>{% trans 'New Public Key' %}</h5>
                         <textarea class="form-control" rows="10"  id="new_pubkey" style="height: 250px;font-family:var(--bs-font-monospace);"></textarea>
                     </div>
                     
                     <div class="field-group">
-                        <h5>New Private Key</h5>
+                        <h5>{% trans 'New Private Key' %}</h5>
                         <textarea class="form-control" rows="10" id="new_privkey" style="height: 250px;font-family:var(--bs-font-monospace);"></textarea>
                     </div>
                 </div>
